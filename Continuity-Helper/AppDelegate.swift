@@ -38,10 +38,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc func onStatusItemClick() {
+        if NSEvent.modifierFlags == .option {
+            let menu = NSMenu(title: "Options")
+            self.setupMenu(menu)
+            statusItem.menu = menu
+            statusItem.button?.performClick(nil)
+            statusItem.menu = nil
+        } else {
+            self.showContinuityItem()
+        }
+    }
+    
+    func showOptionMenu() {
+        
+    }
+    
+    func showContinuityItem() {
         guard let event = NSApplication.shared.currentEvent else { return }
         
         let menu = NSMenu(title: "Continuity")
-        self.setupMenu(menu)
         
         NSApplication.shared.activate(ignoringOtherApps: true)
         
@@ -56,14 +71,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func setupMenu(_ menu: NSMenu) {
         // Check Option Key
         if NSEvent.modifierFlags == .option {
-            let quitItem = NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "Q")
+            let quitItem = NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "")
             quitItem.identifier = NSMenuItem.importFromDeviceIdentifier
+            
+            let preferenceItem = NSMenuItem(title: "Preference", action: nil, keyEquivalent: "")
+            
+            
+            menu.addItem(preferenceItem)
+            menu.addItem(.separator())
             menu.addItem(quitItem)
         }
     }
     
     @objc func quitApp() {
-        NSApplication.shared.terminate(self)
+        NSApplication.shared.terminate(nil)
     }
 
 }
