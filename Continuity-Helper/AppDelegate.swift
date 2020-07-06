@@ -28,7 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         window.canHide = true
         window.hidesOnDeactivate = true
-
+        window.collectionBehavior = .canJoinAllSpaces
     }
     
     func getActiveScreen() -> NSScreen? {
