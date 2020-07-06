@@ -21,7 +21,7 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
     override func validRequestor(forSendType sendType: NSPasteboard.PasteboardType?, returnType: NSPasteboard.PasteboardType?) -> Any? {
         if let pasteboardType = returnType,
             NSImage.imageTypes.contains(pasteboardType.rawValue) {
-            return self  // This object can receive image data.
+            return self
         } else {
             return super.validRequestor(forSendType: sendType, returnType: returnType)
         }

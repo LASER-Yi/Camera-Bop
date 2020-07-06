@@ -10,7 +10,7 @@
 		EC22D3A924B2143B00FFCBDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */; };
 		EC22D3AB24B2143B00FFCBDB /* WrapperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22D3AA24B2143B00FFCBDB /* WrapperController.swift */; };
 		EC22D3AD24B2143D00FFCBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */; };
-		EC501BF424B22E42002B2187 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC501BF324B22E42002B2187 /* MainMenu.xib */; };
+		EC501BF424B22E42002B2187 /* Menu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC501BF324B22E42002B2187 /* Menu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC22D3B124B2143D00FFCBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC22D3B224B2143D00FFCBDB /* Continuity_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Continuity_Helper.entitlements; sourceTree = "<group>"; };
-		EC501BF324B22E42002B2187 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		EC501BF324B22E42002B2187 /* Menu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Menu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 				EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */,
 				EC22D3AA24B2143B00FFCBDB /* WrapperController.swift */,
 				EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */,
-				EC501BF324B22E42002B2187 /* MainMenu.xib */,
+				EC501BF324B22E42002B2187 /* Menu.xib */,
 				EC22D3B124B2143D00FFCBDB /* Info.plist */,
 				EC22D3B224B2143D00FFCBDB /* Continuity_Helper.entitlements */,
 			);
@@ -121,7 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC22D3AD24B2143D00FFCBDB /* Assets.xcassets in Resources */,
-				EC501BF424B22E42002B2187 /* MainMenu.xib in Resources */,
+				EC501BF424B22E42002B2187 /* Menu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

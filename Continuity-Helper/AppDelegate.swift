@@ -12,10 +12,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
+    
     let window = NSWindow()
     let wrapper = WrapperController()
-    
-    let menu = NSMenu(title: "Continuity")
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -29,10 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         window.canHide = true
         window.hidesOnDeactivate = true
-        
-        // Menu
-        let quitItem = NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "Q")
-        menu.addItem(quitItem)
+
     }
     
     func getActiveScreen() -> NSScreen? {
@@ -44,17 +40,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func onStatusItemClick() {
         guard let event = NSApplication.shared.currentEvent else { return }
         
-        window.makeKeyAndOrderFront(self)
-        window.makeFirstResponder(wrapper)
+        let menu = NSMenu(title: "Continuity")
+        self.setupMenu(menu)
         
-        if let screen = self.getActiveScreen() {
-            // set window to center
-            let x: CGFloat = ( NSWidth(screen.frame) - NSWidth(window.frame) ) / 2.0
-            let y: CGFloat = ( NSHeight(screen.frame) - NSHeight(window.frame) ) / 2.0
-            window.setFrame(NSMakeRect(x, y, 0, 0), display: true)
+        NSApplication.shared.activate(ignoringOtherApps: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+            self.window.center()
+            self.window.makeKeyAndOrderFront(nil)
+            self.window.makeFirstResponder(self.wrapper)
+            NSMenu.popUpContextMenu(menu, with: event, for: self.wrapper.view)
         }
-        
-        NSMenu.popUpContextMenu(menu, with: event, for: wrapper.view)
+    }
+    
+    func setupMenu(_ menu: NSMenu) {
+        // Check Option Key
+        if NSEvent.modifierFlags == .option {
+            let quitItem = NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "Q")
+            quitItem.identifier = NSMenuItem.importFromDeviceIdentifier
+            menu.addItem(quitItem)
+        }
     }
     
     @objc func quitApp() {
