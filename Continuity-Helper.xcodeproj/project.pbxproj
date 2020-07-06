@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		EC22D3A924B2143B00FFCBDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */; };
-		EC22D3AB24B2143B00FFCBDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22D3AA24B2143B00FFCBDB /* ViewController.swift */; };
+		EC22D3AB24B2143B00FFCBDB /* WrapperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC22D3AA24B2143B00FFCBDB /* WrapperController.swift */; };
 		EC22D3AD24B2143D00FFCBDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */; };
-		EC22D3B024B2143D00FFCBDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC22D3AE24B2143D00FFCBDB /* Main.storyboard */; };
+		EC501BF424B22E42002B2187 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC501BF324B22E42002B2187 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC22D3A524B2143B00FFCBDB /* Continuity-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Continuity-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EC22D3AA24B2143B00FFCBDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC22D3AA24B2143B00FFCBDB /* WrapperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrapperController.swift; sourceTree = "<group>"; };
 		EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC22D3AF24B2143D00FFCBDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC22D3B124B2143D00FFCBDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC22D3B224B2143D00FFCBDB /* Continuity_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Continuity_Helper.entitlements; sourceTree = "<group>"; };
+		EC501BF324B22E42002B2187 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +54,9 @@
 			isa = PBXGroup;
 			children = (
 				EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */,
-				EC22D3AA24B2143B00FFCBDB /* ViewController.swift */,
+				EC22D3AA24B2143B00FFCBDB /* WrapperController.swift */,
 				EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */,
-				EC22D3AE24B2143D00FFCBDB /* Main.storyboard */,
+				EC501BF324B22E42002B2187 /* MainMenu.xib */,
 				EC22D3B124B2143D00FFCBDB /* Info.plist */,
 				EC22D3B224B2143D00FFCBDB /* Continuity_Helper.entitlements */,
 			);
@@ -121,7 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC22D3AD24B2143D00FFCBDB /* Assets.xcassets in Resources */,
-				EC22D3B024B2143D00FFCBDB /* Main.storyboard in Resources */,
+				EC501BF424B22E42002B2187 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,23 +132,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC22D3AB24B2143B00FFCBDB /* ViewController.swift in Sources */,
+				EC22D3AB24B2143B00FFCBDB /* WrapperController.swift in Sources */,
 				EC22D3A924B2143B00FFCBDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		EC22D3AE24B2143D00FFCBDB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC22D3AF24B2143D00FFCBDB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC22D3B324B2143D00FFCBDB /* Debug */ = {
