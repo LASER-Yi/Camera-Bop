@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="GeneralViewController" customModule="Continuity_Helper" customModuleProvider="target">
+            <connections>
+                <outlet property="launchAtLoginBtn" destination="QvY-0D-4P1" id="LPW-HC-ehj"/>
+                <outlet property="sendNotificationBtn" destination="5fT-TE-us3" id="WYs-FZ-ghm"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="172"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Fa-g0-DaM">
+                    <rect key="frame" x="128" y="64" width="244" height="44"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QvY-0D-4P1">
+                            <rect key="frame" x="-2" y="28" width="119" height="18"/>
+                            <buttonCell key="cell" type="check" title="Launch at Login" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="XYR-KB-eVi">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="btnDidClick:" target="-2" id="hVo-j7-x8L"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5fT-TE-us3">
+                            <rect key="frame" x="-2" y="-2" width="127" height="18"/>
+                            <buttonCell key="cell" type="check" title="Send Notification" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="B42-J7-ATO">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="btnDidClick:" target="-2" id="Idf-DO-vso"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="3Fa-g0-DaM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="128" id="6AL-zW-zwm"/>
+                <constraint firstAttribute="trailing" secondItem="3Fa-g0-DaM" secondAttribute="trailing" constant="128" id="OaC-9J-wgl"/>
+                <constraint firstAttribute="bottom" secondItem="3Fa-g0-DaM" secondAttribute="bottom" constant="64" id="PdD-Fa-3QS"/>
+                <constraint firstItem="3Fa-g0-DaM" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="64" id="Q4d-eH-oJ9"/>
+            </constraints>
+            <point key="canvasLocation" x="203" y="137"/>
+        </customView>
+    </objects>
+</document>

@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import UserNotifications
 
 class WrapperController: NSViewController, NSServicesMenuRequestor {
 
@@ -35,7 +36,21 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
         clip.declareTypes([.tiff], owner: nil)
         clip.setData(image, forType: .tiff)
         
+        
+        // Deliver Notification if copy to clipboard
+        if ConfigStorage.shared.sendNotification {
+            self.sendNotification()
+        }
+        
         return true
+    }
+    
+    func sendNotification() {
+        let notification = NSUserNotification()
+        notification.title = "Save to Clipboard"
+        
+        notification.deliveryDate = Date(timeIntervalSinceNow: .zero)
+        NSUserNotificationCenter.default.scheduleNotification(notification)
     }
 
 }
