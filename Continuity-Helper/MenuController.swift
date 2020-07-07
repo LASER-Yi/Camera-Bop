@@ -98,10 +98,9 @@ class MenuController: NSObject {
     func showContinuityItem() {
         guard let event = NSApplication.shared.currentEvent else { return }
         
-        let menu = NSMenu(title: "Continuity")
+        let menu = NSMenu()
         
         // Move the wrapper window to current screen
-        
         NSApplication.shared.activate(ignoringOtherApps: true)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {

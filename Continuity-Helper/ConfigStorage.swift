@@ -8,6 +8,12 @@
 import Foundation
 import Cocoa
 
+enum ImageExtension: String {
+    case jpeg
+    case png
+    case tiff
+}
+
 class ConfigStorage {
     static let shared = ConfigStorage()
     private init() {}
@@ -17,6 +23,8 @@ class ConfigStorage {
     @Config(key: "CopyToClipboard", defaultVal: true) var copyToClipboard
     
     @Config(key: "SendNotification", defaultVal: false) var sendNotification
+    
+    @Config(key: "ImageExtension", defaultVal: ImageExtension.png.rawValue) var imageExtension
 }
 
 @propertyWrapper

@@ -29,12 +29,23 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
     }
     
     func readSelection(from pboard: NSPasteboard) -> Bool {
-        guard let image = NSImage(pasteboard: pboard)?.tiffRepresentation, pboard.canReadItem(withDataConformingToTypes: NSImage.imageTypes) else { return false }
+        guard let image = NSImage(pasteboard: pboard), pboard.canReadItem(withDataConformingToTypes: NSImage.imageTypes) else { return false }
         
         
-        let clip = NSPasteboard.general
-        clip.declareTypes([.tiff], owner: nil)
-        clip.setData(image, forType: .tiff)
+        if ConfigStorage.shared.copyToClipboard {
+            let clip = NSPasteboard.general
+            clip.declareTypes([.tiff, .png, .init(rawValue: kUTTypeJPEG as String)], owner: nil)
+            
+            
+            // TODO: Add More Type Support
+            clip.setData(image.pngRepresentation, forType: .png)
+        } else {
+            // Create a Receive Window and place it there
+            let window = ReceiveFileWindowController(windowNibName: "ReceiveFileWindowController")
+            window.image = image
+            
+            window.showWindow(nil)
+        }
         
         
         // Deliver Notification if copy to clipboard

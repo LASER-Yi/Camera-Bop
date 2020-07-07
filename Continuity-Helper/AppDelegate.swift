@@ -11,8 +11,6 @@ import Preferences
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-//    let menu: MenuController = .init()
-    
     // MARK: -AppDelegate
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application

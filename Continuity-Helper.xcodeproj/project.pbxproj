@@ -19,6 +19,10 @@
 		EC501C0B24B38EE8002B2187 /* ConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C0A24B38EE8002B2187 /* ConfigStorage.swift */; };
 		EC501C0E24B4377C002B2187 /* NSButton+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C0D24B4377C002B2187 /* NSButton+Helper.swift */; };
 		EC501C1024B49334002B2187 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C0F24B49334002B2187 /* MenuController.swift */; };
+		EC501C1C24B4AED3002B2187 /* ReceiveFileWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C1A24B4AED3002B2187 /* ReceiveFileWindowController.swift */; };
+		EC501C1D24B4AED3002B2187 /* ReceiveFileWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC501C1B24B4AED3002B2187 /* ReceiveFileWindowController.xib */; };
+		EC501C2024B4B65C002B2187 /* DraggableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C1F24B4B65C002B2187 /* DraggableImageView.swift */; };
+		EC501C2224B4C404002B2187 /* NSImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2124B4C404002B2187 /* NSImage+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		EC501C0A24B38EE8002B2187 /* ConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigStorage.swift; sourceTree = "<group>"; };
 		EC501C0D24B4377C002B2187 /* NSButton+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Helper.swift"; sourceTree = "<group>"; };
 		EC501C0F24B49334002B2187 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		EC501C1A24B4AED3002B2187 /* ReceiveFileWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveFileWindowController.swift; sourceTree = "<group>"; };
+		EC501C1B24B4AED3002B2187 /* ReceiveFileWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveFileWindowController.xib; sourceTree = "<group>"; };
+		EC501C1F24B4B65C002B2187 /* DraggableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImageView.swift; sourceTree = "<group>"; };
+		EC501C2124B4C404002B2187 /* NSImage+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				EC501C0A24B38EE8002B2187 /* ConfigStorage.swift */,
+				EC501C1124B4A8D3002B2187 /* Windows */,
+				EC501C1E24B4B62E002B2187 /* Views */,
 				EC501BFD24B37B86002B2187 /* Preferences */,
 				EC501C0C24B4376A002B2187 /* Utils */,
 				EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */,
@@ -120,8 +130,26 @@
 			isa = PBXGroup;
 			children = (
 				EC501C0D24B4377C002B2187 /* NSButton+Helper.swift */,
+				EC501C2124B4C404002B2187 /* NSImage+Helper.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		EC501C1124B4A8D3002B2187 /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				EC501C1A24B4AED3002B2187 /* ReceiveFileWindowController.swift */,
+				EC501C1B24B4AED3002B2187 /* ReceiveFileWindowController.xib */,
+			);
+			path = Windows;
+			sourceTree = "<group>";
+		};
+		EC501C1E24B4B62E002B2187 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EC501C1F24B4B65C002B2187 /* DraggableImageView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +213,7 @@
 			files = (
 				EC22D3AD24B2143D00FFCBDB /* Assets.xcassets in Resources */,
 				EC501C0324B37CA8002B2187 /* AboutViewController.xib in Resources */,
+				EC501C1D24B4AED3002B2187 /* ReceiveFileWindowController.xib in Resources */,
 				EC501BF424B22E42002B2187 /* Menu.xib in Resources */,
 				EC501C0924B3848E002B2187 /* GeneralViewController.xib in Resources */,
 			);
@@ -240,7 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC501C0224B37CA8002B2187 /* AboutViewController.swift in Sources */,
+				EC501C2024B4B65C002B2187 /* DraggableImageView.swift in Sources */,
+				EC501C1C24B4AED3002B2187 /* ReceiveFileWindowController.swift in Sources */,
 				EC501C1024B49334002B2187 /* MenuController.swift in Sources */,
+				EC501C2224B4C404002B2187 /* NSImage+Helper.swift in Sources */,
 				EC22D3AB24B2143B00FFCBDB /* WrapperController.swift in Sources */,
 				EC501C0E24B4377C002B2187 /* NSButton+Helper.swift in Sources */,
 				EC501C0B24B38EE8002B2187 /* ConfigStorage.swift in Sources */,
