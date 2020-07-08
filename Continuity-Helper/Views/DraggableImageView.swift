@@ -52,7 +52,7 @@ class DraggableImageView: NSImageView {
     
     
     override func mouseDragged(with event: NSEvent) {
-        guard let image = self.image, let mouse = self.mouseEvent else { return }
+        guard let mouse = self.mouseEvent else { return }
         
         let origin = convert(mouse.locationInWindow, from: nil)
         let current = convert(event.locationInWindow, from: nil)
