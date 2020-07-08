@@ -35,6 +35,7 @@ class MenuController: NSObject {
     }()
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         self.setup()
     }
     

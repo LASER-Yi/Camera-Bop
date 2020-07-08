@@ -19,23 +19,31 @@
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="264" height="264"/>
+                <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yJh-7U-xFx" customClass="DraggableImageView" customModule="Continuity_Helper" customModuleProvider="target">
-                        <rect key="frame" x="12" y="12" width="240" height="240"/>
+                        <rect key="frame" x="24" y="24" width="240" height="240"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="yJh-7U-xFx" secondAttribute="height" multiplier="1:1" id="7ag-Hv-w3u"/>
                             <constraint firstAttribute="width" constant="240" id="jK4-Z2-N3T"/>
                         </constraints>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="8UN-te-Lbe"/>
                     </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J09-2I-BV9">
+                        <rect key="frame" x="21" y="21" width="246" height="246"/>
+                        <imageCell key="cell" enabled="NO" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="C1L-ZK-rbD"/>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yJh-7U-xFx" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="12" id="4r1-Wa-WRV"/>
-                    <constraint firstItem="yJh-7U-xFx" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="12" id="6fb-rn-hWo"/>
-                    <constraint firstAttribute="bottom" secondItem="yJh-7U-xFx" secondAttribute="bottom" constant="12" id="O68-ZN-GV8"/>
-                    <constraint firstAttribute="trailing" secondItem="yJh-7U-xFx" secondAttribute="trailing" constant="12" id="hVk-wp-ws7"/>
+                    <constraint firstItem="yJh-7U-xFx" firstAttribute="top" secondItem="se5-gp-TjO" secondAttribute="top" constant="24" id="4r1-Wa-WRV"/>
+                    <constraint firstItem="yJh-7U-xFx" firstAttribute="leading" secondItem="se5-gp-TjO" secondAttribute="leading" constant="24" id="6fb-rn-hWo"/>
+                    <constraint firstAttribute="bottom" secondItem="yJh-7U-xFx" secondAttribute="bottom" constant="24" id="O68-ZN-GV8"/>
+                    <constraint firstItem="J09-2I-BV9" firstAttribute="leading" secondItem="yJh-7U-xFx" secondAttribute="leading" id="aWg-TY-ub7"/>
+                    <constraint firstItem="J09-2I-BV9" firstAttribute="bottom" secondItem="yJh-7U-xFx" secondAttribute="bottom" id="avz-2Y-X9c"/>
+                    <constraint firstItem="J09-2I-BV9" firstAttribute="top" secondItem="yJh-7U-xFx" secondAttribute="top" id="cFi-1E-VIh"/>
+                    <constraint firstAttribute="trailing" secondItem="yJh-7U-xFx" secondAttribute="trailing" constant="24" id="hVk-wp-ws7"/>
+                    <constraint firstItem="J09-2I-BV9" firstAttribute="trailing" secondItem="yJh-7U-xFx" secondAttribute="trailing" id="r6b-8B-967"/>
                 </constraints>
             </view>
             <connections>
