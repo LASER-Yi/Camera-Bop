@@ -7,7 +7,7 @@
 
 import Cocoa
 import Preferences
-import UserNotifications
+import ServiceManagement
 
 class GeneralViewController: NSViewController, PreferencePane {
     var preferencePaneIdentifier: Preferences.PaneIdentifier = .init("general")
@@ -35,6 +35,20 @@ class GeneralViewController: NSViewController, PreferencePane {
         switch sender {
         case launchAtLoginBtn:
             ConfigStorage.shared.launchAtLogin.toggle()
+            
+            let identifier = Bundle.main.bundleIdentifier!
+            
+            let result = SMLoginItemSetEnabled(identifier as CFString, ConfigStorage.shared.launchAtLogin)
+            
+            if !result {
+                ConfigStorage.shared.launchAtLogin = false
+                if let window = self.view.window {
+                    let errorBox = NSAlert()
+                    errorBox.messageText = "Cannot Enable Launch at Login"
+                    errorBox.beginSheetModal(for: window)
+                }
+            }
+            
         case sendNotificationBtn:
             self.checkNotificationPermission()
             // Do not update the view, handle later
