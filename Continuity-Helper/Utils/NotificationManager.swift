@@ -21,6 +21,7 @@ class NotificationManager: NSObject {
     
     public func initialize() {
         UNUserNotificationCenter.current().setNotificationCategories(.init(arrayLiteral: clipboardCategory))
+        UNUserNotificationCenter.current().delegate = self
     }
     
     private lazy var clipboardCategory: UNNotificationCategory = {
@@ -60,8 +61,6 @@ class NotificationManager: NSObject {
         }
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil)
-        
-        UNUserNotificationCenter.current().delegate = self
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }

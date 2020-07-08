@@ -44,7 +44,7 @@ class GeneralViewController: NSViewController, PreferencePane {
                 ConfigStorage.shared.launchAtLogin = false
                 if let window = self.view.window {
                     let errorBox = NSAlert()
-                    errorBox.messageText = "Cannot Enable Launch at Login"
+                    errorBox.messageText = "Launch at Login is Unavailable"
                     errorBox.beginSheetModal(for: window)
                 }
             }
