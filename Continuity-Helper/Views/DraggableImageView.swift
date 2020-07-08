@@ -10,10 +10,12 @@ import Cocoa
 class DraggableImageView: NSImageView {
     
     enum RuntimeError: Error {
-        case unavailableImage
+        case ioError
     }
     
-    var saveExtension: ImageExtension = .png
+    var ext: ReceiveExtension!
+    
+    var data: Data!
     
     var title: String = "Untagged Image"
     
@@ -58,7 +60,7 @@ class DraggableImageView: NSImageView {
         guard abs(current.x - origin.x) > dragThreshold || abs(current.y - origin.y) > dragThreshold else { return }
         
         let provider = NSFilePromiseProvider(fileType: kUTTypeTIFF as String, delegate: self)
-        provider.userInfo = image
+        provider.userInfo = data
         
         let draggingItem = NSDraggingItem(pasteboardWriter: provider)
         
@@ -84,25 +86,16 @@ extension DraggableImageView: NSDraggingSource {
 extension DraggableImageView: NSFilePromiseProviderDelegate {
     
     func filePromiseProvider(_ filePromiseProvider: NSFilePromiseProvider, fileNameForType fileType: String) -> String {
-        return "\(title).\(saveExtension.rawValue)"
+        return "\(title).\(ext.rawValue)"
     }
     
     func filePromiseProvider(_ filePromiseProvider: NSFilePromiseProvider, writePromiseTo url: URL, completionHandler: @escaping (Error?) -> Void) {
         do {
-            if let image = filePromiseProvider.userInfo as? NSImage {
+            if let data = filePromiseProvider.userInfo as? Data {
                 
-                let imageData: Data?
-                switch self.saveExtension {
-                case .png:
-                    imageData = image.pngRepresentation
-                case .jpeg:
-                    imageData = image.jpegRepresentation
-                case .tiff:
-                    imageData = image.tiffRepresentation
-                }
-                try imageData?.write(to: url)
+                try data.write(to: url)
             } else {
-                throw RuntimeError.unavailableImage
+                throw RuntimeError.ioError
             }
             completionHandler(nil)
         } catch let error {

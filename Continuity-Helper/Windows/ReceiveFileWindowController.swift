@@ -11,11 +11,18 @@ class ReceiveFileWindowController: NSWindowController {
 
     @IBOutlet weak var imageView: DraggableImageView!
     
-    var image: NSImage? = nil
+    var image: NSImage!
+    
+    var ext: ReceiveExtension!
+    
+    var data: Data!
     
     override func windowDidLoad() {
         super.windowDidLoad()
         self.imageView.image = self.image
+        self.imageView.ext = ext
+        self.imageView.data = data
+        
         self.imageView.unregisterDraggedTypes()
         
         let formatter: DateFormatter = .init()
@@ -26,11 +33,7 @@ class ReceiveFileWindowController: NSWindowController {
         
         self.imageView.title = title
         
-        let ext = ConfigStorage.shared.imageExtension
-        
-        self.imageView.saveExtension = ImageExtension.init(rawValue: ext) ?? .png
-        
-        self.window?.title = "\(title).\(ext)"
+        self.window?.title = "\(title).\(ext.rawValue)"
         
         self.window?.center()
     }

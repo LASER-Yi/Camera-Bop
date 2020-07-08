@@ -19,7 +19,7 @@ class ContinuityReceiver: NSObject {
     
     private(set) var clipboardUrl: URL? = nil
     
-    func receive(image: NSImage) {
+    func receive(data: Data, with ext: ReceiveExtension) {
         self.clear()
         
         if ConfigStorage.shared.copyToClipboard {
@@ -29,25 +29,11 @@ class ContinuityReceiver: NSObject {
             formatter.dateFormat = "HH:mm:ss"
             let title = formatter.string(from: .init())
             
-            guard let ext = ImageExtension.init(rawValue: ConfigStorage.shared.imageExtension) else { return }
-            
             // TODO: Add More Type Support
             let path = self.temporaryUrl.appendingPathComponent("clipboard-\(title)").appendingPathExtension(ext.rawValue)
             
-            let data: Data?
-            switch ext {
-            case .png:
-                data = image.pngRepresentation
-            case .jpeg:
-                data = image.jpegRepresentation
-            case .tiff:
-                data = image.tiffRepresentation
-            }
-            
-            guard let imageData = data else { return }
-            
             do {
-                try imageData.write(to: path)
+                try data.write(to: path)
                 clipboardUrl = path
                 clip.declareTypes([.init(rawValue: ext.rawValue)], owner: nil)
                 clip.writeObjects([path as NSURL])
@@ -55,9 +41,17 @@ class ContinuityReceiver: NSObject {
                 // Deliver Notification if enabled
                 if ConfigStorage.shared.sendNotification {
                     
-                    // create attachment for notification
-                    let tempPath = temporaryUrl.appendingPathComponent(UUID().uuidString).appendingPathExtension(ext.rawValue)
-                    try imageData.write(to: tempPath)
+                    let tempPath: URL
+                    if ext == .pdf {
+                        // create attachment for notification
+                        tempPath = temporaryUrl.appendingPathComponent(UUID().uuidString).appendingPathExtension(ReceiveExtension.jpeg.rawValue)
+                        try NSImage(data: data)?.jpegRepresentation?.write(to: tempPath)
+                    } else {
+                        // create attachment for notification
+                        tempPath = temporaryUrl.appendingPathComponent(UUID().uuidString).appendingPathExtension(ext.rawValue)
+                        try data.write(to: tempPath)
+                    }
+                    
                     NotificationManager.shared.sendClipboardNotify(with: tempPath)
                 }
                 
@@ -67,13 +61,16 @@ class ContinuityReceiver: NSObject {
             
         } else {
             // Create a Receive Window and place it there
-            self.showReceiveWindow(with: image)
+            let preview = NSImage(data: data)!
+            self.showReceiveWindow(with: preview, data: data, ext: ext)
         }
     }
     
-    func showReceiveWindow(with image: NSImage) {
+    func showReceiveWindow(with preview: NSImage, data: Data, ext: ReceiveExtension) {
         let window = ReceiveFileWindowController(windowNibName: "ReceiveFileWindowController")
-        window.image = image
+        window.image = preview
+        window.data = data
+        window.ext = ext
         
         window.showWindow(nil)
     }

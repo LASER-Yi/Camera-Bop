@@ -8,6 +8,10 @@
 import Cocoa
 
 class WrapperController: NSViewController, NSServicesMenuRequestor {
+    
+    enum RuntimeError: Error {
+        case unsupportType
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +32,25 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
     }
     
     func readSelection(from pboard: NSPasteboard) -> Bool {
-        guard let image = NSImage(pasteboard: pboard) else { return false }
         
-        ContinuityReceiver.shared.receive(image: image)
+        let ext: ReceiveExtension
+        let data: Data
+        
+        if pboard.canReadItem(withDataConformingToTypes: [kUTTypePNG as String]) {
+            ext = .png
+            data = pboard.data(forType: .png)!
+        } else if pboard.canReadItem(withDataConformingToTypes: [kUTTypeJPEG as String]) {
+            ext = .jpeg
+            data = pboard.data(forType: .init(kUTTypeJPEG as String))!
+        } else if pboard.canReadItem(withDataConformingToTypes: [kUTTypePDF as String]) {
+            ext = .pdf
+            data = pboard.data(forType: .pdf)!
+        } else {
+            NotificationManager.shared.sendError(RuntimeError.unsupportType)
+            return false
+        }
+        
+        ContinuityReceiver.shared.receive(data: data, with: ext)
         
         return true
     }

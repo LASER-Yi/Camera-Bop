@@ -90,8 +90,11 @@ extension NotificationManager: UNUserNotificationCenterDelegate {
         
         switch response.actionIdentifier {
         case NotificationAction.show.rawValue:
-            if let item = ContinuityReceiver.shared.clipboardUrl, let image = NSImage(contentsOf: item) {
-                ContinuityReceiver.shared.showReceiveWindow(with: image)
+            if let item = ContinuityReceiver.shared.clipboardUrl,
+                let preview = NSImage(contentsOf: item),
+                let data = try? Data(contentsOf: item),
+                let ext = ReceiveExtension.init(rawValue: item.pathExtension){
+                    ContinuityReceiver.shared.showReceiveWindow(with: preview, data: data, ext: ext)
             }
             break
         default:

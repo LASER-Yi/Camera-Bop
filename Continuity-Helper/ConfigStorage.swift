@@ -8,10 +8,10 @@
 import Foundation
 import Cocoa
 
-enum ImageExtension: String {
+enum ReceiveExtension: String {
     case jpeg
     case png
-    case tiff
+    case pdf
 }
 
 class ConfigStorage {
@@ -23,8 +23,6 @@ class ConfigStorage {
     @Config(key: "CopyToClipboard", defaultVal: true) var copyToClipboard
     
     @Config(key: "SendNotification", defaultVal: false) var sendNotification
-    
-    @Config(key: "ImageExtension", defaultVal: ImageExtension.png.rawValue) var imageExtension
 }
 
 @propertyWrapper
