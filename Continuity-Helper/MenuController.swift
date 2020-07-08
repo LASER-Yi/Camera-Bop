@@ -43,7 +43,8 @@ class MenuController: NSObject {
         if let button = statusItem.button, let image = NSImage(named: .init("StatusBarButton")) {
             button.image = image
             button.target = self
-            button.action = #selector(onStatusItemClick)
+            button.action = #selector(onStatusItemClick(sender:))
+            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
         }
         // Window
         window.contentViewController = wrapper
@@ -56,8 +57,10 @@ class MenuController: NSObject {
     }
     
     
-    @objc func onStatusItemClick() {
-        if NSEvent.modifierFlags == .option {
+    @objc func onStatusItemClick(sender: NSStatusBarButton) {
+        guard let event = NSApplication.shared.currentEvent else { return }
+        
+        if event.type == .rightMouseUp {
             self.showOptionMenu()
         } else {
             self.showContinuityItem()
