@@ -23,6 +23,8 @@
 		EC501C1D24B4AED3002B2187 /* ReceiveFileWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC501C1B24B4AED3002B2187 /* ReceiveFileWindowController.xib */; };
 		EC501C2024B4B65C002B2187 /* DraggableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C1F24B4B65C002B2187 /* DraggableImageView.swift */; };
 		EC501C2224B4C404002B2187 /* NSImage+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2124B4C404002B2187 /* NSImage+Helper.swift */; };
+		EC501C2424B5EAEB002B2187 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2324B5EAEB002B2187 /* NotificationManager.swift */; };
+		EC501C2624B60036002B2187 /* ContinuityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2524B60036002B2187 /* ContinuityReceiver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		EC501C1B24B4AED3002B2187 /* ReceiveFileWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReceiveFileWindowController.xib; sourceTree = "<group>"; };
 		EC501C1F24B4B65C002B2187 /* DraggableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableImageView.swift; sourceTree = "<group>"; };
 		EC501C2124B4C404002B2187 /* NSImage+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Helper.swift"; sourceTree = "<group>"; };
+		EC501C2324B5EAEB002B2187 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		EC501C2524B60036002B2187 /* ContinuityReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuityReceiver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +110,8 @@
 				EC501C0C24B4376A002B2187 /* Utils */,
 				EC22D3A824B2143B00FFCBDB /* AppDelegate.swift */,
 				EC501C0F24B49334002B2187 /* MenuController.swift */,
-				EC501BF324B22E42002B2187 /* Menu.xib */,
 				EC22D3AA24B2143B00FFCBDB /* WrapperController.swift */,
+				EC501BF324B22E42002B2187 /* Menu.xib */,
 				EC22D3AC24B2143D00FFCBDB /* Assets.xcassets */,
 				EC22D3B124B2143D00FFCBDB /* Info.plist */,
 				EC22D3B224B2143D00FFCBDB /* Continuity_Helper.entitlements */,
@@ -131,6 +135,8 @@
 			children = (
 				EC501C0D24B4377C002B2187 /* NSButton+Helper.swift */,
 				EC501C2124B4C404002B2187 /* NSImage+Helper.swift */,
+				EC501C2324B5EAEB002B2187 /* NotificationManager.swift */,
+				EC501C2524B60036002B2187 /* ContinuityReceiver.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -272,9 +278,11 @@
 				EC501C2024B4B65C002B2187 /* DraggableImageView.swift in Sources */,
 				EC501C1C24B4AED3002B2187 /* ReceiveFileWindowController.swift in Sources */,
 				EC501C1024B49334002B2187 /* MenuController.swift in Sources */,
+				EC501C2424B5EAEB002B2187 /* NotificationManager.swift in Sources */,
 				EC501C2224B4C404002B2187 /* NSImage+Helper.swift in Sources */,
 				EC22D3AB24B2143B00FFCBDB /* WrapperController.swift in Sources */,
 				EC501C0E24B4377C002B2187 /* NSButton+Helper.swift in Sources */,
+				EC501C2624B60036002B2187 /* ContinuityReceiver.swift in Sources */,
 				EC501C0B24B38EE8002B2187 /* ConfigStorage.swift in Sources */,
 				EC22D3A924B2143B00FFCBDB /* AppDelegate.swift in Sources */,
 				EC501C0824B3848E002B2187 /* GeneralViewController.swift in Sources */,

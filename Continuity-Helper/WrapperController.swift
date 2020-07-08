@@ -6,7 +6,6 @@
 //
 
 import Cocoa
-import UserNotifications
 
 class WrapperController: NSViewController, NSServicesMenuRequestor {
 
@@ -29,39 +28,11 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
     }
     
     func readSelection(from pboard: NSPasteboard) -> Bool {
-        guard let image = NSImage(pasteboard: pboard), pboard.canReadItem(withDataConformingToTypes: NSImage.imageTypes) else { return false }
+        guard let image = NSImage(pasteboard: pboard) else { return false }
         
-        
-        if ConfigStorage.shared.copyToClipboard {
-            let clip = NSPasteboard.general
-            clip.declareTypes([.tiff, .png, .init(rawValue: kUTTypeJPEG as String)], owner: nil)
-            
-            
-            // TODO: Add More Type Support
-            clip.setData(image.pngRepresentation, forType: .png)
-        } else {
-            // Create a Receive Window and place it there
-            let window = ReceiveFileWindowController(windowNibName: "ReceiveFileWindowController")
-            window.image = image
-            
-            window.showWindow(nil)
-        }
-        
-        
-        // Deliver Notification if copy to clipboard
-        if ConfigStorage.shared.sendNotification {
-            self.sendNotification()
-        }
+        ContinuityReceiver.shared.receive(image: image)
         
         return true
-    }
-    
-    func sendNotification() {
-        let notification = NSUserNotification()
-        notification.title = "Save to Clipboard"
-        
-        notification.deliveryDate = Date(timeIntervalSinceNow: .zero)
-        NSUserNotificationCenter.default.scheduleNotification(notification)
     }
 
 }

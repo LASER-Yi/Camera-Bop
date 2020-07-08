@@ -47,27 +47,18 @@ class GeneralViewController: NSViewController, PreferencePane {
     }
     
     func checkNotificationPermission() {
-        let notiCenter = UNUserNotificationCenter.current()
-        notiCenter.requestAuthorization(options: .provisional) { (granted, error) in
+        
+        NotificationManager.shared.toggleNotification { (result, error) in
             DispatchQueue.main.async {
                 if let error = error, let window = self.view.window {
                     let errorBox = NSAlert(error: error)
-                    errorBox.beginSheetModal(for: window) { (_) in
-                        ConfigStorage.shared.sendNotification = false
-                        self.updateView()
-                    }
-                    return
-                }
-                
-                if !granted {
-                    ConfigStorage.shared.sendNotification = false
+                    errorBox.beginSheetModal(for: window)
+                } else if !result {
                     if let window = self.view.window {
                         let errorBox = NSAlert()
                         errorBox.messageText = "Cannot Enable Notification, please check your notification permission"
                         errorBox.beginSheetModal(for: window, completionHandler: nil)
                     }
-                } else {
-                    ConfigStorage.shared.sendNotification.toggle()
                 }
                 
                 self.updateView()

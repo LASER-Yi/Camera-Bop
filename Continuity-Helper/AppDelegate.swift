@@ -14,9 +14,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     // MARK: -AppDelegate
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
+        NotificationManager.shared.initialize()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
+        // Do some cleaning
+        ContinuityReceiver.shared.clear()
     }
 
 }
