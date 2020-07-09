@@ -15,25 +15,6 @@ class MenuController: NSObject {
     private let window = NSWindow()
     let wrapper = WrapperController()
     
-    let clipboardItem = NSMenuItem(title: "Copy to Clipboard", action: #selector(onClipboardItemClick), keyEquivalent: "")
-    
-    lazy var optionMenu: NSMenu = {
-        let menu = NSMenu(title: "Options")
-        
-        let quitItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "")
-        
-        let preferenceItem = NSMenuItem(title: "Preference...", action: #selector(onPreferenceItemClick), keyEquivalent: "")
-        preferenceItem.target = self
-        
-        menu.addItem(clipboardItem)
-        menu.addItem(.separator())
-        menu.addItem(preferenceItem)
-        menu.addItem(.separator())
-        menu.addItem(quitItem)
-        
-        return menu
-    }()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
@@ -74,7 +55,27 @@ class MenuController: NSObject {
         return NSScreen.screens.first { NSMouseInRect(mouse, $0.frame, false) }
     }
     
-    // MARK: -Options
+    // MARK: -Options Menus
+    
+    let clipboardItem = NSMenuItem(title: "Copy to Clipboard", action: #selector(onClipboardItemClick), keyEquivalent: "")
+    
+    lazy var optionMenu: NSMenu = {
+        let menu = NSMenu(title: "Options")
+        
+        let quitItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "")
+        
+        let preferenceItem = NSMenuItem(title: "Preference...", action: #selector(onPreferenceItemClick), keyEquivalent: "")
+        preferenceItem.target = self
+        
+        menu.addItem(clipboardItem)
+        menu.addItem(.separator())
+        menu.addItem(preferenceItem)
+        menu.addItem(.separator())
+        menu.addItem(quitItem)
+        
+        return menu
+    }()
+    
     func showOptionMenu() {
         self.updateOptionMenu()
         statusItem.menu = optionMenu

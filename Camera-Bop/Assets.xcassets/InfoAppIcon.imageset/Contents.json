@@ -1,0 +1,18 @@
+{
+  "images" : [
+    {
+      "filename" : "CH App Icon-256@1x.png",
+      "idiom" : "mac",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "CH App Icon-256@2x.png",
+      "idiom" : "mac",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

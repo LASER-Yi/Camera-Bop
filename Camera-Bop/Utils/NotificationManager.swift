@@ -50,7 +50,7 @@ class NotificationManager: NSObject {
     func sendClipboardNotify(with attachment: URL? = nil) {
         
         let notification = UNMutableNotificationContent()
-        notification.title = "Continuity Helper"
+        notification.title = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Camera Bop" 
         notification.body = "Copied to Clipboard"
         notification.sound = .none
         notification.categoryIdentifier = NotificationCategory.clipboard.rawValue
@@ -72,8 +72,6 @@ class NotificationManager: NSObject {
         notification.sound = .default
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil)
-        
-        UNUserNotificationCenter.current().delegate = self
         
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
