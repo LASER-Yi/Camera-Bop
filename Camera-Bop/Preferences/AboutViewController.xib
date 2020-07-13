@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AboutViewController" customModule="Camera_Bop" customModuleProvider="target">
             <connections>
+                <outlet property="issueBtn" destination="m7e-hi-dHV" id="dj0-u8-S5H"/>
+                <outlet property="sourceBtn" destination="Rzo-JV-AEn" id="7gf-kz-0GA"/>
                 <outlet property="versionLabel" destination="wJ9-f2-AEy" id="BMc-oF-qfd"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -27,10 +29,10 @@
                             </constraints>
                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="InfoAppIcon" id="lGR-iK-XqY"/>
                         </imageView>
-                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="4" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-jk-Icx">
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DKK-jk-Icx">
                             <rect key="frame" x="104" y="22" width="196" height="62"/>
                             <subviews>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-cR-1Fp">
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="751" verticalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="GkT-cR-1Fp">
                                     <rect key="frame" x="-2" y="19" width="200" height="43"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Camera Bop" id="82S-cY-Xcg">
                                         <font key="font" metaFont="systemMedium" size="36"/>
@@ -39,7 +41,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wJ9-f2-AEy">
-                                    <rect key="frame" x="-2" y="0.0" width="86" height="15"/>
+                                    <rect key="frame" x="-2" y="0.0" width="86" height="19"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Version Label" id="2an-aF-6fs">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -72,24 +74,30 @@
                     </customSpacing>
                 </stackView>
                 <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="31" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAZ-yw-TXE" userLabel="Some Buttons">
-                    <rect key="frame" x="126" y="64" width="238" height="40"/>
+                    <rect key="frame" x="125" y="64" width="240" height="40"/>
                     <subviews>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rzo-JV-AEn">
-                            <rect key="frame" x="-6" y="12" width="118" height="32"/>
+                            <rect key="frame" x="-6" y="12" width="120" height="32"/>
                             <buttonCell key="cell" type="push" title="Source Code" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="PAv-Oq-dSY">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="openUrlAction:" target="-2" id="XOO-Dc-GvY"/>
+                            </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="m7e-hi-dHV">
-                            <rect key="frame" x="131" y="12" width="113" height="32"/>
+                            <rect key="frame" x="133" y="12" width="113" height="32"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="101" id="YJy-Uk-Quy"/>
                             </constraints>
-                            <buttonCell key="cell" type="push" title="Have Issues" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DMH-pG-uM4">
+                            <buttonCell key="cell" type="push" title="Feedback" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DMH-pG-uM4">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
+                            <connections>
+                                <action selector="openUrlAction:" target="-2" id="eFs-Ka-w9s"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>

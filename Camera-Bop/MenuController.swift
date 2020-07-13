@@ -5,9 +5,9 @@
 //  Created by LiangYi on 2020/7/7.
 //
 
-import Foundation
 import Cocoa
 import Preferences
+import HotKey
 
 class MenuController: NSObject {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)

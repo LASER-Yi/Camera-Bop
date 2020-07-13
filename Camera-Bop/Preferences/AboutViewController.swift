@@ -19,7 +19,7 @@ class AboutViewController: NSViewController, PreferencePane {
         var text = ""
         if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String, let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String  {
             
-            text = "Version \(version)(\(build))"
+            text = "Version \(version) (\(build))"
         }
         
         return text
@@ -30,5 +30,28 @@ class AboutViewController: NSViewController, PreferencePane {
         // Do view setup here.
         self.versionLabel.stringValue = versionText
     }
+    
+    // MARK: -Buttons
+    
+    @IBOutlet weak var sourceBtn: NSButton!
+    
+    @IBOutlet weak var issueBtn: NSButton!
+    
+    @IBAction func openUrlAction(_ sender: NSButton) {
+        
+        let link: URL?
+        
+        switch sender {
+        case issueBtn:
+            link = URL(string: "https://github.com/LASER-Yi/Camera-Bop/issues")
+        default:
+            link = URL(string: "https://github.com/LASER-Yi/Camera-Bop")
+        }
+        
+        guard let url = link else {return}
+        
+        NSWorkspace.shared.open(url)
+    }
+
     
 }

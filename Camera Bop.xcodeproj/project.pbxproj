@@ -25,6 +25,7 @@
 		EC501C2424B5EAEB002B2187 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2324B5EAEB002B2187 /* NotificationManager.swift */; };
 		EC501C2624B60036002B2187 /* ContinuityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2524B60036002B2187 /* ContinuityReceiver.swift */; };
 		EC501C2924B61133002B2187 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = EC501C2824B61133002B2187 /* Preferences */; };
+		EC501C2C24B76916002B2187 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = EC501C2B24B76916002B2187 /* HotKey */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC501C2C24B76916002B2187 /* HotKey in Frameworks */,
 				EC501C2924B61133002B2187 /* Preferences in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +156,7 @@
 			name = "Camera Bop";
 			packageProductDependencies = (
 				EC501C2824B61133002B2187 /* Preferences */,
+				EC501C2B24B76916002B2187 /* HotKey */,
 			);
 			productName = "Continuity-Helper";
 			productReference = EC22D3A524B2143B00FFCBDB /* Camera Bop.app */;
@@ -184,6 +187,7 @@
 			mainGroup = EC22D39C24B2143B00FFCBDB;
 			packageReferences = (
 				EC501C2724B61133002B2187 /* XCRemoteSwiftPackageReference "Preferences" */,
+				EC501C2A24B76916002B2187 /* XCRemoteSwiftPackageReference "HotKey" */,
 			);
 			productRefGroup = EC22D3A624B2143B00FFCBDB /* Products */;
 			projectDirPath = "";
@@ -427,6 +431,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		EC501C2A24B76916002B2187 /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -434,6 +446,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC501C2724B61133002B2187 /* XCRemoteSwiftPackageReference "Preferences" */;
 			productName = Preferences;
+		};
+		EC501C2B24B76916002B2187 /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC501C2A24B76916002B2187 /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
