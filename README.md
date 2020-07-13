@@ -8,18 +8,22 @@
 
 <p align="center">
   <a href="https://github.com/Dreamacro/clash/actions">
-    <img src="https://img.shields.io/badge/requirement-macOS Catalina-success.svg?style=flat-square" />
+    <img src="https://img.shields.io/badge/requirement-macOS Mojave+-success.svg?style=flat-square" />
+  </a>
+    <a href="https://github.com/Dreamacro/clash/actions">
+    <img src="https://img.shields.io/badge/mobile device-iOS 12+-informational.svg?style=flat-square" />
   </a>
   <a href="https://github.com/LASER-Yi/Camera-Bop/releases">
     <img src="https://img.shields.io/github/release/LASER-Yi/Camera-Bop/all.svg?style=flat-square" />
   </a>
 </p>
 
+
 ## Feature
 
 ![Screenshot](./images/screenshot.png)
 
-* Use iPhone or iPad as an external camera in status bar
+* Use iPhone or iPad as an [external camera](https://support.apple.com/en-us/HT209037) in status bar
 * Copy to clipboard automatically
 * Drag and Drop
 
@@ -45,7 +49,7 @@
 
 ## Thanks
 
-[sinresorhus/Preferences](https://github.com/sindresorhus/Preferences) for Perference Panel
+[sinresorhus/Preferences](https://github.com/sindresorhus/Preferences) for perference panel
 
 [soffes/HotKey](https://github.com/soffes/HotKey) for global hotkey
 
