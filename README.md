@@ -34,7 +34,7 @@
 
 #### Manual Install
 
-* Download [latest version](https://github.com/LASER-Yi/Camera-Bop/releases/latest)
+* Download [latest version](https://github.com/LASER-Yi/Camera-Bop/releases/latest) on Mac
 * Unzip and drag the app to Applications folder
 * Launch and you are ready to go!
 

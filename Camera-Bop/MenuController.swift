@@ -57,14 +57,14 @@ class MenuController: NSObject {
     
     // MARK: -Options Menus
     
-    let clipboardItem = NSMenuItem(title: "Copy to Clipboard", action: #selector(onClipboardItemClick), keyEquivalent: "")
+    let clipboardItem = NSMenuItem(title: "Copy to Clipboard", action: #selector(onClipboardItemClick), keyEquivalent: "C")
     
     lazy var optionMenu: NSMenu = {
         let menu = NSMenu(title: "Options")
         
-        let quitItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "")
+        let quitItem = NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "Q")
         
-        let preferenceItem = NSMenuItem(title: "Preference...", action: #selector(onPreferenceItemClick), keyEquivalent: "")
+        let preferenceItem = NSMenuItem(title: "Preference...", action: #selector(onPreferenceItemClick), keyEquivalent: ",")
         preferenceItem.target = self
         
         menu.addItem(clipboardItem)

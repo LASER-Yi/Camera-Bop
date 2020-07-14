@@ -70,7 +70,7 @@ class GeneralViewController: NSViewController, PreferencePane {
                 } else if !result {
                     if let window = self.view.window {
                         let errorBox = NSAlert()
-                        errorBox.messageText = "Cannot Enable Notification, please check your notification permission"
+                        errorBox.messageText = "Cannot enable notification, please check your notification permission"
                         errorBox.beginSheetModal(for: window, completionHandler: nil)
                     }
                 }
