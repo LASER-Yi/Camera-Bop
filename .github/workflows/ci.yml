@@ -5,8 +5,8 @@ on: push
 jobs:
   test:
     name: CI
-      runs-on: macOS-latest
-      steps:
+    runs-on: macos-latest
+    steps:
         - name: Checkout
           uses: actions/checkout@master
         - name: Build and test
