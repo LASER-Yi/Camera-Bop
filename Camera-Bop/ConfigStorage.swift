@@ -20,7 +20,7 @@ class ConfigStorage {
     
     @Config(key: "LaunchAtLogin", defaultVal: false) var launchAtLogin
     
-    @Config(key: "CopyToClipboard", defaultVal: true) var copyToClipboard
+    @Config(key: "CopyToClipboard", defaultVal: false) var copyToClipboard
     
     @Config(key: "SendNotification", defaultVal: false) var sendNotification
 }
