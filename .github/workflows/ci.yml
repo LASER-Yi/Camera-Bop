@@ -1,5 +1,8 @@
 name: CI
-on: push
+on:
+  push:
+    branches:
+      - master
 
 
 jobs:
@@ -9,6 +12,11 @@ jobs:
     steps:
         - name: Checkout
           uses: actions/checkout@master
+        - name: Setup Code-Sign
+          uses: apple-actions/import-codesign-certs@v1
+          with:
+            p12-file-base64: ${{ secrets.CERT_P12_BASE64 }}
+            p12-password: ${{ secrets.CERT_P12_PASSWD }}
         - name: Build and test
           run: | 
             xcodebuild -scheme Camera\ Bop -configuration Release
