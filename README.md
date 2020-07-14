@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/LASER-Yi/Camera-Bop/actions">
-    <img src="https://img.shields.io/github/workflow/status/LASER-Yi/Camera-Bop/Go?style=flat-square" />
+    <img src="https://img.shields.io/github/workflow/status/LASER-Yi/Camera-Bop/CI?style=flat-square" />
   </a>
   <a href="https://github.com/Dreamacro/clash/actions">
     <img src="https://img.shields.io/badge/requirement-macOS Mojave+-success.svg?style=flat-square" />
