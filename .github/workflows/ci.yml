@@ -1,0 +1,14 @@
+name: CI
+on: push
+
+
+jobs:
+  test:
+    name: CI
+      runs-on: macOS-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@master
+        - name: Build and test
+          run: | 
+            xcodebuild -scheme Camera\ Bop -configuration Release

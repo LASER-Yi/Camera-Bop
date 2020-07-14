@@ -7,6 +7,9 @@
 <p align="center"> Continuity Camera in status bar!</p>
 
 <p align="center">
+  <a href="https://github.com/LASER-Yi/Camera-Bop/actions">
+    <img src="https://img.shields.io/github/workflow/status/LASER-Yi/Camera-Bop/Go?style=flat-square" />
+  </a>
   <a href="https://github.com/Dreamacro/clash/actions">
     <img src="https://img.shields.io/badge/requirement-macOS Mojave+-success.svg?style=flat-square" />
   </a>
