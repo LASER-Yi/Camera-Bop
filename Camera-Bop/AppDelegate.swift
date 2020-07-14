@@ -23,7 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
-        AppRuntime.shared.openPreferencePanel()
+        if !flag {
+            AppRuntime.shared.openPreferencePanel()            
+        }
         return true
     }
 
