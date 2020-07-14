@@ -14,11 +14,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         NotificationManager.shared.initialize()
+        
     }
     
     func applicationWillTerminate(_ notification: Notification) {
         // Do some cleaning
         ContinuityReceiver.shared.clear()
+    }
+    
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        AppRuntime.shared.openPreferencePanel()
+        return true
     }
 
 }

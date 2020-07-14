@@ -36,7 +36,7 @@ class GeneralViewController: NSViewController, PreferencePane {
         case launchAtLoginBtn:
             ConfigStorage.shared.launchAtLogin.toggle()
             
-            let identifier = Bundle.main.bundleIdentifier!
+            let identifier = "com.LASER-Yi.CBLaunchHelper"
             
             let result = SMLoginItemSetEnabled(identifier as CFString, ConfigStorage.shared.launchAtLogin)
             

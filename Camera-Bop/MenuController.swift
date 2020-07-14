@@ -92,11 +92,7 @@ class MenuController: NSObject {
     }
     
     @objc func onPreferenceItemClick() {
-        let panels: [PreferencePane] = [GeneralViewController(), AboutViewController()]
-        
-        let prefWindow = PreferencesWindowController(preferencePanes: panels, style: .segmentedControl, animated: true, hidesToolbarForSingleItem: false)
-        
-        prefWindow.show()
+        AppRuntime.shared.openPreferencePanel()
     }
     
     // MARK: -Continuity

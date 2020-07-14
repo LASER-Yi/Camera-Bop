@@ -26,7 +26,36 @@
 		EC501C2624B60036002B2187 /* ContinuityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2524B60036002B2187 /* ContinuityReceiver.swift */; };
 		EC501C2924B61133002B2187 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = EC501C2824B61133002B2187 /* Preferences */; };
 		EC501C2C24B76916002B2187 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = EC501C2B24B76916002B2187 /* HotKey */; };
+		EC65F58C24BD7128003C29D7 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC65F58B24BD7128003C29D7 /* ServiceManagement.framework */; };
+		EC65F59A24BD77B2003C29D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC65F59924BD77B2003C29D7 /* AppDelegate.swift */; };
+		EC65F59C24BD77B3003C29D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC65F59B24BD77B3003C29D7 /* Assets.xcassets */; };
+		EC65F59F24BD77B3003C29D7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC65F59D24BD77B3003C29D7 /* MainMenu.xib */; };
+		EC65F5A524BD77C2003C29D7 /* LaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC65F59724BD77B2003C29D7 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EC65F5A924BDCD33003C29D7 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC65F5A824BDCD33003C29D7 /* Runtime.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EC65F5A624BD77C6003C29D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EC22D39D24B2143B00FFCBDB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EC65F59624BD77B2003C29D7;
+			remoteInfo = LauncherHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EC65F58D24BD74F5003C29D7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				EC65F5A524BD77C2003C29D7 /* LaunchHelper.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EC22D3A524B2143B00FFCBDB /* Camera Bop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Camera Bop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +78,14 @@
 		EC501C2124B4C404002B2187 /* NSImage+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+Helper.swift"; sourceTree = "<group>"; };
 		EC501C2324B5EAEB002B2187 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		EC501C2524B60036002B2187 /* ContinuityReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuityReceiver.swift; sourceTree = "<group>"; };
+		EC65F58B24BD7128003C29D7 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		EC65F59724BD77B2003C29D7 /* LaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC65F59924BD77B2003C29D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EC65F59B24BD77B3003C29D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EC65F59E24BD77B3003C29D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		EC65F5A024BD77B3003C29D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC65F5A124BD77B3003C29D7 /* LaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchHelper.entitlements; sourceTree = "<group>"; };
+		EC65F5A824BDCD33003C29D7 /* Runtime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runtime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +93,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC65F58C24BD7128003C29D7 /* ServiceManagement.framework in Frameworks */,
 				EC501C2C24B76916002B2187 /* HotKey in Frameworks */,
 				EC501C2924B61133002B2187 /* Preferences in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EC65F59424BD77B2003C29D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,7 +113,9 @@
 			isa = PBXGroup;
 			children = (
 				EC22D3A724B2143B00FFCBDB /* Camera-Bop */,
+				EC65F59824BD77B2003C29D7 /* LaunchHelper */,
 				EC22D3A624B2143B00FFCBDB /* Products */,
+				EC65F58A24BD7127003C29D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				EC22D3A524B2143B00FFCBDB /* Camera Bop.app */,
+				EC65F59724BD77B2003C29D7 /* LaunchHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				EC501C0A24B38EE8002B2187 /* ConfigStorage.swift */,
+				EC65F5A824BDCD33003C29D7 /* Runtime.swift */,
 				EC501C1124B4A8D3002B2187 /* Windows */,
 				EC501C1E24B4B62E002B2187 /* Views */,
 				EC501BFD24B37B86002B2187 /* Preferences */,
@@ -138,6 +187,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EC65F58A24BD7127003C29D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EC65F58B24BD7128003C29D7 /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC65F59824BD77B2003C29D7 /* LaunchHelper */ = {
+			isa = PBXGroup;
+			children = (
+				EC65F59924BD77B2003C29D7 /* AppDelegate.swift */,
+				EC65F59B24BD77B3003C29D7 /* Assets.xcassets */,
+				EC65F59D24BD77B3003C29D7 /* MainMenu.xib */,
+				EC65F5A024BD77B3003C29D7 /* Info.plist */,
+				EC65F5A124BD77B3003C29D7 /* LaunchHelper.entitlements */,
+			);
+			path = LaunchHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -148,10 +217,12 @@
 				EC22D3A124B2143B00FFCBDB /* Sources */,
 				EC22D3A224B2143B00FFCBDB /* Frameworks */,
 				EC22D3A324B2143B00FFCBDB /* Resources */,
+				EC65F58D24BD74F5003C29D7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EC65F5A724BD77C6003C29D7 /* PBXTargetDependency */,
 			);
 			name = "Camera Bop";
 			packageProductDependencies = (
@@ -162,17 +233,37 @@
 			productReference = EC22D3A524B2143B00FFCBDB /* Camera Bop.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EC65F59624BD77B2003C29D7 /* LaunchHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC65F5A224BD77B3003C29D7 /* Build configuration list for PBXNativeTarget "LaunchHelper" */;
+			buildPhases = (
+				EC65F59324BD77B2003C29D7 /* Sources */,
+				EC65F59424BD77B2003C29D7 /* Frameworks */,
+				EC65F59524BD77B2003C29D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LaunchHelper;
+			productName = LauncherHelper;
+			productReference = EC65F59724BD77B2003C29D7 /* LaunchHelper.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EC22D39D24B2143B00FFCBDB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1200;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
 				TargetAttributes = {
 					EC22D3A424B2143B00FFCBDB = {
 						CreatedOnToolsVersion = 12.0;
+					};
+					EC65F59624BD77B2003C29D7 = {
+						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -194,6 +285,7 @@
 			projectRoot = "";
 			targets = (
 				EC22D3A424B2143B00FFCBDB /* Camera Bop */,
+				EC65F59624BD77B2003C29D7 /* LaunchHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +303,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC65F59524BD77B2003C29D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC65F59C24BD77B3003C29D7 /* Assets.xcassets in Resources */,
+				EC65F59F24BD77B3003C29D7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -222,6 +323,7 @@
 				EC501C2024B4B65C002B2187 /* DraggableImageView.swift in Sources */,
 				EC501C1C24B4AED3002B2187 /* ReceiveFileWindowController.swift in Sources */,
 				EC501C1024B49334002B2187 /* MenuController.swift in Sources */,
+				EC65F5A924BDCD33003C29D7 /* Runtime.swift in Sources */,
 				EC501C2424B5EAEB002B2187 /* NotificationManager.swift in Sources */,
 				EC501C2224B4C404002B2187 /* NSImage+Helper.swift in Sources */,
 				EC22D3AB24B2143B00FFCBDB /* WrapperController.swift in Sources */,
@@ -233,7 +335,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EC65F59324BD77B2003C29D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC65F59A24BD77B2003C29D7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EC65F5A724BD77C6003C29D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EC65F59624BD77B2003C29D7 /* LaunchHelper */;
+			targetProxy = EC65F5A624BD77C6003C29D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EC65F59D24BD77B3003C29D7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EC65F59E24BD77B3003C29D7 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC22D3B324B2143D00FFCBDB /* Debug */ = {
@@ -287,7 +416,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -342,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -399,6 +528,48 @@
 			};
 			name = Release;
 		};
+		EC65F5A324BD77B3003C29D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaunchHelper/LaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6MTC9ES4SK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = LaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LASER-Yi.CBLaunchHelper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EC65F5A424BD77B3003C29D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LaunchHelper/LaunchHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6MTC9ES4SK;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = LaunchHelper/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.LASER-Yi.CBLaunchHelper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,6 +587,15 @@
 			buildConfigurations = (
 				EC22D3B624B2143D00FFCBDB /* Debug */,
 				EC22D3B724B2143D00FFCBDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC65F5A224BD77B3003C29D7 /* Build configuration list for PBXNativeTarget "LaunchHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC65F5A324BD77B3003C29D7 /* Debug */,
+				EC65F5A424BD77B3003C29D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
