@@ -17,7 +17,7 @@ class DraggableImageView: NSImageView {
     
     var data: Data!
     
-    var title: String = "Untagged Image"
+    var title: String = "Untitle"
     
     private let dragThreshold: CGFloat = 3.0
     

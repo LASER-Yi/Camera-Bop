@@ -34,30 +34,36 @@ class NotificationManager: NSObject {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .provisional]) { (granted, error) in
             DispatchQueue.main.async {
                 if let error = error {
-                    ConfigStorage.shared.sendNotification = false
+                    ConfigStorage.sendNotification = false
                     callback(false, error)
                 } else if !granted {
-                    ConfigStorage.shared.sendNotification = false
+                    ConfigStorage.sendNotification = false
                     callback(false, nil)
                 } else {
-                    ConfigStorage.shared.sendNotification.toggle()
+                    ConfigStorage.sendNotification.toggle()
                     callback(true, nil)
                 }
             }
         }
     }
     
-    func sendClipboardNotify(with attachment: URL? = nil) {
-        
+    func deliverRichNotification(with text: String, _ attachment: NSImage? = nil) {
         let notification = UNMutableNotificationContent()
-        notification.title = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Camera Bop" 
-        notification.body = "Copied to Clipboard"
+        notification.title = Bundle.main.infoDictionary?[kCFBundleNameKey as String] as? String ?? "Camera Bop"
+        notification.body = text
         notification.sound = .none
         notification.categoryIdentifier = NotificationCategory.clipboard.rawValue
         
+        
+        // Convert image to small jpeg
+        let size = NSSize(width: 120, height: 120)
+        let path = AppRuntime.shared.temporaryUrl.appendingPathComponent(UUID().description).appendingPathExtension(ReceiveExtension.jpeg.rawValue)
+        
         if let item = attachment,
-            let attachment = try? UNNotificationAttachment(identifier: "image", url: item, options: nil) {
-            notification.attachments.append(attachment)
+            let data = item.resize(size)?.jpegRepresentation,
+            let _ = try? data.write(to: path),
+            let attachment = try? UNNotificationAttachment(identifier: "image", url: path, options: nil){
+                notification.attachments.append(attachment)
         }
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil)

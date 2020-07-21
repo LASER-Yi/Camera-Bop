@@ -27,7 +27,7 @@
 
 ![Screenshot](./images/screenshot.png)
 
-* Use iPhone or iPad as an [external camera](https://support.apple.com/en-us/HT209037) in status bar
+* Use [Continutiy Camera](https://support.apple.com/en-us/HT209037) in status bar
 * Copy to clipboard automatically
 * Drag and Drop
 
@@ -55,7 +55,7 @@
 
 [sinresorhus/Preferences](https://github.com/sindresorhus/Preferences) for perference panel
 
-[soffes/HotKey](https://github.com/soffes/HotKey) for global hotkey
+[soffes/HotKey](https://github.com/soffes/HotKey) for global shortcut
 
 
 

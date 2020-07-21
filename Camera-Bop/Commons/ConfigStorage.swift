@@ -7,6 +7,7 @@
 
 import Foundation
 import Cocoa
+import HotKey
 
 enum ReceiveExtension: String {
     case jpeg
@@ -15,14 +16,15 @@ enum ReceiveExtension: String {
 }
 
 class ConfigStorage {
-    static let shared = ConfigStorage()
     private init() {}
     
-    @Config(key: "LaunchAtLogin", defaultVal: false) var launchAtLogin
+    @Config(key: "LaunchAtLogin", defaultVal: false) static var launchAtLogin
     
-    @Config(key: "CopyToClipboard", defaultVal: false) var copyToClipboard
+    @Config(key: "CopyToClipboard", defaultVal: false) static var copyToClipboard
     
-    @Config(key: "SendNotification", defaultVal: false) var sendNotification
+    @Config(key: "SendNotification", defaultVal: false) static var sendNotification
+    
+    @Config(key: "ShortcutKey", defaultVal: [:]) static var shortcut: [String: Any];
 }
 
 @propertyWrapper

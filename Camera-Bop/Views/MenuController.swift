@@ -12,9 +12,6 @@ import HotKey
 class MenuController: NSObject {
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
-    private let window = NSWindow()
-    let wrapper = WrapperController()
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.setup()
@@ -27,12 +24,6 @@ class MenuController: NSObject {
             button.action = #selector(onStatusItemClick(sender:))
             button.sendAction(on: [.leftMouseUp, .rightMouseUp])
         }
-        // Window
-        window.contentViewController = wrapper
-        
-        window.canHide = true
-        window.hidesOnDeactivate = true
-        window.collectionBehavior = .canJoinAllSpaces
     
         clipboardItem.target = self
     }
@@ -44,7 +35,7 @@ class MenuController: NSObject {
         if event.type == .rightMouseUp {
             self.showOptionMenu()
         } else {
-            self.showContinuityItem()
+            AppRuntime.shared.showContinuityItem()
         }
     }
     
@@ -84,32 +75,15 @@ class MenuController: NSObject {
     }
     
     func updateOptionMenu() {
-        clipboardItem.state = ConfigStorage.shared.copyToClipboard ? .on : .off
+        clipboardItem.state = ConfigStorage.copyToClipboard ? .on : .off
     }
     
     @objc func onClipboardItemClick() {
-        ConfigStorage.shared.copyToClipboard.toggle()
+        ConfigStorage.copyToClipboard.toggle()
     }
     
     @objc func onPreferenceItemClick() {
         AppRuntime.shared.openPreferencePanel()
-    }
-    
-    // MARK: -Continuity
-    func showContinuityItem() {
-        guard let event = NSApplication.shared.currentEvent else { return }
-        
-        let menu = NSMenu()
-        
-        // Move the wrapper window to current screen
-        NSApplication.shared.activate(ignoringOtherApps: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            self.window.center()
-            self.window.makeKeyAndOrderFront(nil)
-            self.window.makeFirstResponder(self.wrapper)
-            NSMenu.popUpContextMenu(menu, with: event, for: self.wrapper.view)
-        }
     }
     
 }

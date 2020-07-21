@@ -6,15 +6,20 @@
 //
 
 import Cocoa
+import HotKey
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    @IBOutlet weak var menuController: MenuController!
+    
+    
     
     // MARK: -AppDelegate
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         NotificationManager.shared.initialize()
-        
+        AppRuntime.shared.initialize()
     }
     
     func applicationWillTerminate(_ notification: Notification) {

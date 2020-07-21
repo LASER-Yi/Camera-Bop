@@ -8,10 +8,6 @@
 import Cocoa
 
 class WrapperController: NSViewController, NSServicesMenuRequestor {
-    
-    enum RuntimeError: Error {
-        case unsupportType
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +31,7 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
         
         let ext: ReceiveExtension
         let data: Data
-        
+
         if pboard.canReadItem(withDataConformingToTypes: [kUTTypePNG as String]) {
             ext = .png
             data = pboard.data(forType: .png)!
@@ -46,7 +42,6 @@ class WrapperController: NSViewController, NSServicesMenuRequestor {
             ext = .pdf
             data = pboard.data(forType: .pdf)!
         } else {
-            NotificationManager.shared.sendError(RuntimeError.unsupportType)
             return false
         }
         

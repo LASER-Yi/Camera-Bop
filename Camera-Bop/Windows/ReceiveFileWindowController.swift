@@ -8,6 +8,10 @@
 import Cocoa
 
 class ReceiveFileWindowController: NSWindowController {
+    
+    static func create() -> ReceiveFileWindowController {
+        return ReceiveFileWindowController(windowNibName: "ReceiveFileWindowController")
+    }
 
     @IBOutlet weak var imageView: DraggableImageView!
     
