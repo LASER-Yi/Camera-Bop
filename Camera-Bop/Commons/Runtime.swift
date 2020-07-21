@@ -40,6 +40,10 @@ class AppRuntime {
         trigger = nil
     }
     
+    public func disableHotKey() {
+        trigger = nil
+    }
+    
     public func updateHotKey(combo: KeyCombo) -> Bool {
         ConfigStorage.shortcut = combo.dictionary
         trigger = ContinutiyKeyTrigger()

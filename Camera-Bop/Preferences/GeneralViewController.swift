@@ -117,12 +117,14 @@ class GeneralViewController: NSViewController, PreferencePane {
         if !isRecording {
             self.stopRecordHotKey()
         } else {
+            AppRuntime.shared.disableHotKey()
             self.updateHkBtn()
         }
     }
     
     private func updateHkBtn() {
         if isRecording {
+            setCancelBtn(false)
             if let key = currentKey {
                 self.shortcutBtn.title = KeyCombo(key: key, modifiers: self.currentModifier).description
             } else {

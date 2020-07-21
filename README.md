@@ -11,10 +11,10 @@
     <img src="https://img.shields.io/github/workflow/status/LASER-Yi/Camera-Bop/CI?style=flat-square" />
   </a>
   <a href="https://github.com/Dreamacro/clash/actions">
-    <img src="https://img.shields.io/badge/requirement-macOS Mojave+-important.svg?style=flat-square" />
+    <img src="https://img.shields.io/badge/macOS-Mojave+-informational.svg?style=flat-square" />
   </a>
     <a href="https://github.com/Dreamacro/clash/actions">
-    <img src="https://img.shields.io/badge/mobile device-iOS 12+-informational.svg?style=flat-square" />
+    <img src="https://img.shields.io/badge/iOS-12+-inactive.svg?style=flat-square" />
   </a>
   <a href="https://github.com/LASER-Yi/Camera-Bop/releases">
     <img src="https://img.shields.io/github/release/LASER-Yi/Camera-Bop/all.svg?style=flat-square" />
