@@ -30,30 +30,21 @@
 		EC65F59A24BD77B2003C29D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC65F59924BD77B2003C29D7 /* AppDelegate.swift */; };
 		EC65F59C24BD77B3003C29D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC65F59B24BD77B3003C29D7 /* Assets.xcassets */; };
 		EC65F59F24BD77B3003C29D7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC65F59D24BD77B3003C29D7 /* MainMenu.xib */; };
-		EC65F5A524BD77C2003C29D7 /* LaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = EC65F59724BD77B2003C29D7 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EC65F5A924BDCD33003C29D7 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC65F5A824BDCD33003C29D7 /* Runtime.swift */; };
 		ECD89E9124BF387D00D206D3 /* ContinutiyKeyTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD89E9024BF387D00D206D3 /* ContinutiyKeyTrigger.swift */; };
+		ECF700C724C73F9100C7A5C8 /* LaunchHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = EC65F59724BD77B2003C29D7 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		EC65F5A624BD77C6003C29D7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = EC22D39D24B2143B00FFCBDB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC65F59624BD77B2003C29D7;
-			remoteInfo = LauncherHelper;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		EC65F58D24BD74F5003C29D7 /* CopyFiles */ = {
+		EC65F58D24BD74F5003C29D7 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				EC65F5A524BD77C2003C29D7 /* LaunchHelper.app in CopyFiles */,
+				ECF700C724C73F9100C7A5C8 /* LaunchHelper.app in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -228,12 +219,11 @@
 				EC22D3A124B2143B00FFCBDB /* Sources */,
 				EC22D3A224B2143B00FFCBDB /* Frameworks */,
 				EC22D3A324B2143B00FFCBDB /* Resources */,
-				EC65F58D24BD74F5003C29D7 /* CopyFiles */,
+				EC65F58D24BD74F5003C29D7 /* Copy Files */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EC65F5A724BD77C6003C29D7 /* PBXTargetDependency */,
 			);
 			name = "Camera Bop";
 			packageProductDependencies = (
@@ -357,14 +347,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		EC65F5A724BD77C6003C29D7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EC65F59624BD77B2003C29D7 /* LaunchHelper */;
-			targetProxy = EC65F5A624BD77C6003C29D7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		EC65F59D24BD77B3003C29D7 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
@@ -411,7 +393,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -474,7 +456,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -505,7 +487,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6MTC9ES4SK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Camera-Bop/Info.plist";
@@ -530,7 +512,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6MTC9ES4SK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Camera-Bop/Info.plist";
@@ -554,7 +536,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6MTC9ES4SK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LaunchHelper/Info.plist;
@@ -578,7 +560,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6MTC9ES4SK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = LaunchHelper/Info.plist;
