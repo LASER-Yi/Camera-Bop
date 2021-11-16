@@ -26,13 +26,13 @@
 		EC501C2624B60036002B2187 /* ContinuityReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC501C2524B60036002B2187 /* ContinuityReceiver.swift */; };
 		EC501C2924B61133002B2187 /* Preferences in Frameworks */ = {isa = PBXBuildFile; productRef = EC501C2824B61133002B2187 /* Preferences */; };
 		EC501C2C24B76916002B2187 /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = EC501C2B24B76916002B2187 /* HotKey */; };
+		EC6096AA2516F75D0009405A /* LaunchHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = EC65F59724BD77B2003C29D7 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EC65F58C24BD7128003C29D7 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC65F58B24BD7128003C29D7 /* ServiceManagement.framework */; };
 		EC65F59A24BD77B2003C29D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC65F59924BD77B2003C29D7 /* AppDelegate.swift */; };
 		EC65F59C24BD77B3003C29D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC65F59B24BD77B3003C29D7 /* Assets.xcassets */; };
 		EC65F59F24BD77B3003C29D7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC65F59D24BD77B3003C29D7 /* MainMenu.xib */; };
 		EC65F5A924BDCD33003C29D7 /* Runtime.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC65F5A824BDCD33003C29D7 /* Runtime.swift */; };
 		ECD89E9124BF387D00D206D3 /* ContinutiyKeyTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECD89E9024BF387D00D206D3 /* ContinutiyKeyTrigger.swift */; };
-		ECF700C724C73F9100C7A5C8 /* LaunchHelper.app in Copy Files */ = {isa = PBXBuildFile; fileRef = EC65F59724BD77B2003C29D7 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,7 +42,7 @@
 			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				ECF700C724C73F9100C7A5C8 /* LaunchHelper.app in Copy Files */,
+				EC6096AA2516F75D0009405A /* LaunchHelper.app in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +487,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6MTC9ES4SK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Camera-Bop/Info.plist";
@@ -512,7 +512,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 6MTC9ES4SK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Camera-Bop/Info.plist";
@@ -548,6 +548,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LASER-Yi.CBLaunchHelper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -572,6 +573,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LASER-Yi.CBLaunchHelper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
